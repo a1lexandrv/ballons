@@ -3,6 +3,18 @@
     height: 85vh
     background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url('../img/header-background.jpg') center / cover no-repeat
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    @include respond(tab-port)
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%)
+
+    //На устройствах с высоким dpi отображаем изображение большего размера
+    //Второе правило прописали потому что на смартфонах тоже может быть высокий dpi
+    @media (min-resolution: 192dpi) and (min-width: 670px)
+        background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url('../img/header-background-big.jpg') center / cover no-repeat
+    //Отталкиваемся от картинки меньшего размера. А ее размер 1340px
+    @media ( min-width: 1340px)
+        background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url('../img/header-background-big.jpg') center / cover no-repeat
+    //Можно сократить эту запись вот так
+    //@media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px)
 
     &__logo
         position: absolute
@@ -18,3 +30,5 @@
         transform: translate(-50%, -50%)
         width: 100%
         text-align: center
+        @include respond(tab-land)
+        top: 50%

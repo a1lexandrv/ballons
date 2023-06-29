@@ -10,6 +10,12 @@
         transition: all .3s
         position: relative
         border: none
+        @include respond(tab-land)
+            font-size: 1.7rem
+            padding: 1.5rem 3.7rem
+        @include respond(tab-land)
+            padding: 2rem 5rem
+
     // это псевдокласс
     &:hover
         transform: translateY(-.4rem)

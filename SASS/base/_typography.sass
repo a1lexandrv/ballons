@@ -8,6 +8,10 @@ body
 .title-first
     color: $color-white
     margin-bottom: 6.5rem
+    @include respond(tab-land)
+        margin-bottom: 3.5rem
+    @include respond(tab-land)
+        margin-bottom: 3rem
 
     &__main
         display: block
@@ -27,6 +31,11 @@ body
         animation-timing-function: ease
         // убираем возможные лаги анимации
         backface-visibility: hidden
+        @include respond(tab-land)
+            font-size: 4rem
+        @include respond(tab-port)
+            font-size: 3.6rem
+            letter-spacing: .5rem
 
     &__secondary
         display: block
@@ -39,6 +48,11 @@ body
         animation-delay: 1s
         animation-timing-function: ease
         backface-visibility: hidden
+        @include respond(tab-land)
+            font-size: 3.5rem
+        @include respond(tab-port)
+            font-size: 3.2rem
+            letter-spacing: .2rem
 
 .title-secondary
     display: inline-block
@@ -59,6 +73,10 @@ body
     // &:hover
     //     transform: skewY(2deg) skewX(15deg) scale(1.03)
     //     text-shadow: $shadow-h2
+    @include respond(tab-land)
+        font-size: 3rem
+    @include respond(tab-port)
+        letter-spacing: .6rem
     &_white
         color: $color-white
 
@@ -67,9 +85,13 @@ body
     letter-spacing: .2rem
     text-transform: uppercase
     font-weight: 700
+    @include respond(tab-land)
+        font-size: 1.8rem
 
 .paragraph
     font-size: $font-size-paragraph
     letter-spacing: .2rem
     line-height: 140%
     font-weight: 400
+    @include respond(tab-land)
+        font-size: 1.5rem
